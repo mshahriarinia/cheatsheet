@@ -1,0 +1,35 @@
+#session1
+#new  -s SessionName -n WindowName Command
+#neww -n foo/bar foo 
+#splitw -v -p 50 -t 0 bar 'scala'
+#selectw -t 1 
+#selectp -t 0
+selectp -t 0              # Select pane 0
+splitw -v -p 80  # Split pane 0 vertically by 50%
+selectp -t 1              # Select pane 1
+splitw -v -p 80 
+splitw -v -p 80 
+
+splitw -h -p 50      # Split pane 1 horizontally by 25% forhtop and itop
+#selectp -t 0              # Select pane 0
+
+selectp -t 1
+splitw -h -p 50
+
+selectp -t 3
+splitw -h -p 50
+
+
+
+
+respawn-pane -k -t 0 'sshpass -p "PASSWORD" ssh morteza@sm321-01.cise.ufl.edu; tail -f ~/cbpLog.txt'
+respawn-pane -k -t 1 'sshpass -p "PASSWORD" ssh morteza@sm321-01.cise.ufl.edu; tail -f ~/cbpLog.txt'
+respawn-pane -k -t 2 'sshpass -p "PASSWORD" ssh morteza@sm321-01.cise.ufl.edu; ls' 
+respawn-pane -k -t 3 'sshpass -p "PASSWORD" ssh -Y morteza@sm321-01.cise.ufl.edu; jvisualvm'
+respawn-pane -k -t 4 'sshpass -p "PASSWORD" ssh morteza@sm321-01.cise.ufl.edu; itop' 
+respawn-pane -k -t 5 'sshpass -p "PASSWORD" ssh morteza@sm321-01.cise.ufl.edu; htop'
+selectp -t 0 
+
+
+
+

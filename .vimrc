@@ -16,7 +16,7 @@ set showmatch "Highlights matching brackets in programming languages
 
 
 " formatting {
-  set nowrap                     	" wrap long lines
+	set nowrap                     	" wrap long lines
 	set autoindent                 	" If you're indented, new lines will also be indent
 	set smartindent  "Automatically indents lines after opening a bracket in programming languages
 	set shiftwidth=4               	" use indents of 4 spaces (on SHIFT key?)
