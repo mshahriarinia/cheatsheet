@@ -66,11 +66,14 @@ scriptencoding utf-8
 
 
 "Setting up the directories {
+if v:version >= 730
 set backup 						" backups are nice ...
 set undofile					" so is persistent undo ...
 set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 set history=1000  				" Store a ton of history (default is 20)
+endif
+
 "}
 
 "Highligh cursor line {
