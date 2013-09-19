@@ -244,3 +244,15 @@ PATH=$PATH:$HOME/.rvm/bin
 export PATH="/usr/local/heroku/bin:$PATH"
 
 
+# I should put the following lines in ~/.bash_profile but I don't add complexit and another file.
+# just put them here for future reference, just in case. 
+#
+# Configure PATH
+# - These are line by line so that you can kill one without affecting the others.
+# - Lowest priority first, highest priority last.
+#export PATH=$PATH
+#export PATH=$HOME/bin:$PATH
+#export PATH=/usr/bin:$PATH
+#export PATH=/usr/local/bin:$PATH
+#export PATH=/usr/local/sbin:$PATH
+#export PATH=/usr/local/heroku/bin:$PATH # Heroku: https://toolbelt.heroku.com/standalone
