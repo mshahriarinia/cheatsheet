@@ -158,8 +158,8 @@ function! InitializeDirectories()
 			  \ 'backup': 'backupdir', 
 			  \ 'views': 'viewdir', 
 			  \ 'swap': 'directory'}
-			  #, 
-			  #\ 'undo': 'undodir' }
+			  ", 
+			  "\ 'undo': 'undodir' }
 
   for [dirname, settingname] in items(dir_list)
 	  let directory = parent . '/' . prefix . dirname . "/"
