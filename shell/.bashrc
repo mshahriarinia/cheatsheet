@@ -76,11 +76,11 @@ fi
 #  Conversely, if the default group name is *different* from the username
 #  AND the user id is greater than 99, we're on the server, and set umask
 #  022 for easy collaborative editing.
-if [ "`id -gn`" == "`id -un`" -a `id -u` -gt 99 ]; then
-	umask 002
-else
-	umask 022
-fi
+    if [ "`id -gn`" == "`id -un`" -a `id -u` -gt 99 ]; then
+        umask 002
+    else
+        umask 022
+    fi
 
 
 
@@ -91,18 +91,17 @@ fi
 # Set various bash parameters based on whether the shell is 'interactive'
 # or not. An interactive shell is one you type commands into, a
 # non-interactive one is the bash environment used in scripts.
-if [ "$PS1" ]; then
+#if [ "$PS1" ]; then
 
-    echo "hasPS1"
-    if [ -x /usr/bin/tput ]; then 
-        if [ "x`tput kbs`" != "x" ]; then # We can't do this with "dumb" terminal
-            stty erase `tput kbs`
-        elif [ -x /usr/bin/wc ]; then
-            if [ "`tput kbs|wc -c `" -gt 0 ]; then # We can't do this with "dumb" terminal
-                stty erase `tput kbs`
-            fi
-        fi
-     fi
+#    if [ -x /usr/bin/tput ]; then 
+#        if [ "x`tput kbs`" != "x" ]; then # We can't do this with "dumb" terminal
+#            stty erase `tput kbs`
+#        elif [ -x /usr/bin/wc ]; then
+#            if [ "`tput kbs|wc -c `" -gt 0 ]; then # We can't do this with "dumb" terminal
+#                stty erase `tput kbs`
+#            fi
+#        fi
+#     fi
 
     case $TERM in
         xterm*)
@@ -168,57 +167,130 @@ if [ "$PS1" ]; then
             fi
         done
     fi
-fi
+#fi
 
 
 
 # Append to history
 # See: http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
-shopt -s histappend
+    shopt -s histappend
 
-# Make prompt informative
+## ---------------------
+## -- Make prompt informative, taken from Amazon EC2 ubuntu instance
+## ---------------------
 # See: http://www.ukuug.org/events/linux2003/papers/bash_tips/
-PS1="\[\033[0;34m\][\u@\h:\w]$\[\033[0m\] "
+    # PS1="\[\033[0;34m\][\u@\h:\w]$\[\033[0m\] "
+
+    # set variable identifying the chroot you work in (used in the prompt below)
+    if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+        debian_chroot=$(cat /etc/debian_chroot)
+    fi
+
+    # set a fancy prompt (non-color, unless we know we "want" color)
+    case "$TERM" in
+        xterm-color) color_prompt=yes;;
+    esac
+
+    # uncomment for a colored prompt, if the terminal has the capability; turned
+    # off by default to not distract the user: the focus in a terminal window
+    # should be on the output of commands, not on the prompt
+    force_color_prompt=yes
+
+    if [ -n "$force_color_prompt" ]; then
+        if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
+        else
+        color_prompt=
+        fi
+    fi
+
+    if [ "$color_prompt" = yes ]; then
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    else
+        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    fi
+    unset color_prompt force_color_prompt
 
 
-## -----------------------
+
+
+
+
+
+
+
 ## -- Set up aliases --
 ## -----------------------
 
-# Safety
-alias rm="rm -i"
-alias mv="mv -i"
-alias cp="cp -i"
-set -o noclobber
+    # Safety
+    alias rm="rm -i"
+    alias mv="mv -i"
+    alias cp="cp -i"
+    set -o noclobber
 
-# Listing, directories, and motion
-alias ll="ls -alrtF --color"
-alias la="ls -A"
-alias l="ls -CF"
-alias dir='ls --color=auto --format=vertical'
-alias vdir='ls --color=auto --format=long'
-alias ..='cd ..'
-alias cl='clear'
-alias du='du -ch --max-depth=1'
-alias treeacl='tree -A -C -L 2'
+    # Listing, directories, and motion
+    alias ls='ls --color=auto'
+    alias ll="ls -alrtF --color"
+    alias la="ls -A"
+    alias l="ls -CF"
+    #alias dir='ls --color=auto --format=vertical'
+    #alias vdir='ls --color=auto --format=long'
+    alias ..='cd ..'
+    alias cl='clear'
+    alias du='du -ch --max-depth=1'
+    alias treeacl='tree -A -C -L 2'
+    # make less more friendly for non-text input files, see lesspipe(1)
+    [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 
 
-# grep options
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;31' # green for matches
+    # grep options
+    export GREP_OPTIONS='--color=auto'
+    export GREP_COLOR='1;31' # green for matches
 
-# sort options
-# Ensures cross-platform sorting behavior of GNU sort.
-# http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
-unset LANG
-export LC_ALL=POSIX
+    # sort options
+    # Ensures cross-platform sorting behavior of GNU sort.
+    # http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
+    unset LANG
+    export LC_ALL=POSIX
+
+
+
+# Enable programmable completion features (you don't need to enable                                                                                                                                                                      
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+    if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+        . /etc/bash_completion
+    fi
+
+# Set the title to user@host:dir if this is an xterm
+    case "$TERM" in
+        xterm*|rxvt*)
+            PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+        ;;
+        *)
+        ;;
+    esac
+
 
 
 ## ------------------------------
 ## -- User-customized bash --
 ## ------------------------------
 
-## Define any user-specific variables you want here.
-source ~/.bashrc_custom
+    # Load other shell settings specific to different aplications
+    if [ "x$SHLVL" != "x1" ]; then # We're not a login shell                                                               
+        for i in /etc/profile.d/*.sh; do
+            if [ -r "$i" ]; then
+                . $i
+            fi
+        done
+    fi
+
+
+    ## Define any user-specific variables you want here.
+    source ~/.bashrc_custom
 
