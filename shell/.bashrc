@@ -40,9 +40,10 @@
 
 
 
-
-
-
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
 
 
 
@@ -171,88 +172,47 @@ shopt -s histappend
 
 # Make prompt informative
 # See: http://www.ukuug.org/events/linux2003/papers/bash_tips/
-PS1="\[\033[0;34m\][\u@\h:\w]$\[\033[0m\] "
+#PS1="\[\033[0;34m\][\u@\h:\w]$\[\033[0m\] "
 
 
 ## -----------------------
-## -- 2) Set up aliases --
+## -- Set up aliases --
 ## -----------------------
 
-# 2.1) Safety
+# Safety
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
 set -o noclobber
 
-# 2.2) Listing, directories, and motion
+# Listing, directories, and motion
 alias ll="ls -alrtF --color"
 alias la="ls -A"
 alias l="ls -CF"
 alias dir='ls --color=auto --format=vertical'
 alias vdir='ls --color=auto --format=long'
-#alias m='less'
 alias ..='cd ..'
-#alias ...='cd ..;cd ..'
-#alias md='mkdir'
 alias cl='clear'
 alias du='du -ch --max-depth=1'
 alias treeacl='tree -A -C -L 2'
 
-# 2.3) Text and editor commands
-#alias em='emacs -nw' # No X11 windows
-#alias eqq='emacs -nw -Q' # No config and no X11
-#export EDITOR='emacs -nw'
-#export VISUAL='emacs -nw'
 
 
-
-# 2.3) Text and editor commands
-# some aliases for emacs which I don't use
-
-# 2.4) grep options
+# grep options
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;31' # green for matches
 
-# 2.5) sort options
+# sort options
 # Ensures cross-platform sorting behavior of GNU sort.
 # http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
 unset LANG
 export LC_ALL=POSIX
 
 
-
-
-
-
 ## ------------------------------
-## -- 3) User-customized code --
+## -- User-customized bash --
 ## ------------------------------
 
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
 
-
-
-
-
-
-
-# Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin 
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-
-# I should put the following lines in ~/.bash_profile but I don't add complexit and another file.
-# just put them here for future reference, just in case. 
-#
-# Configure PATH
-# - These are line by line so that you can kill one without affecting the others.
-# - Lowest priority first, highest priority last.
-#export PATH=$PATH
-#export PATH=$HOME/bin:$PATH
-#export PATH=/usr/bin:$PATH
-#export PATH=/usr/local/bin:$PATH
-#export PATH=/usr/local/sbin:$PATH
-#export PATH=/usr/local/heroku/bin:$PATH # Heroku: https://toolbelt.heroku.com/standalone
