@@ -1,3 +1,16 @@
+echo "Welcome `whoami` to `hostname`.             `date +"%a, %d %b %Y - %H:%M %p %Z"`"
+echo
+echo -e "\e[00;31mOperating system:\e[00m `find /etc/ -type f -maxdepth 1  -name '*release*' 2> /dev/null | xargs cat | grep --color=never 'CentOS\|Ubuntu\|Red Hat'`"
+echo 
+echo -e "\e[00;31meth0 IP address\e[00m: ` /sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'`         \e[00;31mFree memory:\e[00m   `free | grep Mem | awk '{ printf("%.4f%\n", $4/$2 * 100.0) }'`"
+echo
+echo -e "\e[00;31mDisk usage:\e[00m"
+df -khP | grep "^/dev/" | tr -s ' ' | cut -d" " -f1,5
+echo
+echo
+echo
+
+
 #
 # https://raw.github.com/startup-class/dotfiles/master/.bashrc
 #
@@ -38,8 +51,6 @@
 #      --norc option. The --rcfile file option will force Bash to read and
 #      execute commands from file instead of ~/.bashrc.
 
-
-echo "Custom ~/.bashrc Loading..."
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
