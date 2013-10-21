@@ -180,3 +180,17 @@ endfunction
 call InitializeDirectories() 
 
 set whichwrap+=<,>,[,] "set arrow keys to go to next/prev lines at the end/beginning of line
+
+" -----Some mappings to let vim work without going to insert mode explicitly for
+" basic keys like backspace, enter, tab, ...
+"
+" map the backspace key '<BS>' in normal mode so that it deletes the
+" preceding character and returns to normal mode
+map <BS> i<BS><ESC>l
+map <TAB> i<TAB><ESC>l
+" map the space key '<space>' in normal mode so that it inserts a space and
+" returns to normal mode
+map <space> i<space><ESC>l
+" map the return key '<CR>' in normal mode so that it inserts a blank line
+" and returns to normal mode
+map <CR> i<CR><ESC>
