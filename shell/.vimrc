@@ -178,3 +178,5 @@ function! InitializeDirectories()
   endfor
 endfunction
 call InitializeDirectories() 
+
+set whichwrap+=<,>,[,] "set arrow keys to go to next/prev lines at the end/beginning of line
