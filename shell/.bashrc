@@ -15,7 +15,19 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     echo
     echo
     echo
-elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+
+# Non-Mac aliases: Listing, directories, and motion
+    alias ls='ls --color=auto'
+    alias ll="ls -alrtF --color"
+    alias la="ls -A"
+    alias l="ls -CF"
+    #alias dir='ls --color=auto --format=vertical'
+    #alias vdir='ls --color=auto --format=long'
+    alias ..='cd ..'
+    alias cl='clear'
+    alias du='du -ch --max-depth=1'
+    alias treeacl='tree -A -C -L 2'
+ elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
     # Do something under Windows NT platform
 fi
 
@@ -250,18 +262,7 @@ fi
     alias cp="cp -i"
     set -o noclobber
 
-    # Listing, directories, and motion
-    alias ls='ls --color=auto'
-    alias ll="ls -alrtF --color"
-    alias la="ls -A"
-    alias l="ls -CF"
-    #alias dir='ls --color=auto --format=vertical'
-    #alias vdir='ls --color=auto --format=long'
-    alias ..='cd ..'
-    alias cl='clear'
-    alias du='du -ch --max-depth=1'
-    alias treeacl='tree -A -C -L 2'
-    # make less more friendly for non-text input files, see lesspipe(1)
+      # make less more friendly for non-text input files, see lesspipe(1)
     [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 
