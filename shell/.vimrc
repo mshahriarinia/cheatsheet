@@ -94,61 +94,58 @@ set wildmode=list:longest,full	" command <Tab> completion, list matches, then lo
 set scrolljump=5 				" lines to scroll when cursor leaves screen
 set scrolloff=3 				" minimum lines to keep above and below cursor
 
-"
 
-
-
-
-
-
+" Show ruler
 if has('cmdline_info')
-	set ruler                  	" show the ruler
-	set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
-	set showcmd                	" show partial commands in status line and selected characters/lines in visual mode
+    set ruler                  	" show the ruler
+    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
+    set showcmd                	" show partial commands in status line and selected characters/lines in visual mode
 endif
 
-
+" More declarative status line
 if has('statusline')
-        set laststatus=2
-
-		" Broken down into easily includeable segments
-		set statusline=%<%f\    " Filename
-		set statusline+=%w%h%m%r " Options		
-		set statusline+=\ [%{&ff}/%Y]            " filetype
-		set statusline+=\ [%{getcwd()}]          " current dir
-		"set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
-		set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-	endif
-
-
-
-
-
-
-
-
-
-
+    set laststatus=2
+    " Broken down into easily includeable segments
+    set statusline=%<%f\    " Filename
+    set statusline+=%w%h%m%r " Options		
+    set statusline+=\ [%{&ff}/%Y]            " filetype
+    set statusline+=\ [%{getcwd()}]          " current dir
+    "set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
+    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+endif
 
 
 
 "--- The following commands make the navigation keys work like standard editors
-imap <silent> <Down> <C-o>gj
-imap <silent> <Up> <C-o>gk
-nmap <silent> <Down> gj
-nmap <silent> <Up> gk
+    imap <silent> <Down> <C-o>gj
+    imap <silent> <Up> <C-o>gk
+    nmap <silent> <Down> gj
+    nmap <silent> <Up> gk
 "--- Ends navigation commands
+
 "--- The following adds a sweet menu, press F4 to use it.
-source $VIMRUNTIME/menu.vim
-set wildmenu
-set cpo-=<
-set wcm=<C-Z>
-map <F4> :emenu <C-Z>
+    source $VIMRUNTIME/menu.vim
+    set wildmenu
+    set cpo-=<
+    set wcm=<C-Z>
+    map <F4> :emenu <C-Z>
 "--- End sweet menu
 
+set whichwrap+=<,>,[,] "set arrow keys to go to next/prev lines at the end/beginning of line
+
+" -----Some mappings to let vim work without going to insert mode explicitly for
+" basic keys like backspace, enter, tab, ...
+"
+    " map the backspace key '<BS>' in normal mode so that it deletes the preceding character and returns to normal mode
+    map <BS> i<BS><ESC>l
+    map <TAB> i<TAB><ESC>l
+    " map the space key '<space>' in normal mode so that it inserts a space and returns to normal mode
+    map <space> i<space><ESC>l
+    " map the return key '<CR>' in normal mode so that it inserts a blank line and returns to normal mode
+    map <CR> i<CR><ESC>
 
 
-
+" -------------------------------- Functions
 
 function! InitializeDirectories()
   let separator = "."
@@ -179,18 +176,4 @@ function! InitializeDirectories()
 endfunction
 call InitializeDirectories() 
 
-set whichwrap+=<,>,[,] "set arrow keys to go to next/prev lines at the end/beginning of line
 
-" -----Some mappings to let vim work without going to insert mode explicitly for
-" basic keys like backspace, enter, tab, ...
-"
-" map the backspace key '<BS>' in normal mode so that it deletes the
-" preceding character and returns to normal mode
-map <BS> i<BS><ESC>l
-map <TAB> i<TAB><ESC>l
-" map the space key '<space>' in normal mode so that it inserts a space and
-" returns to normal mode
-map <space> i<space><ESC>l
-" map the return key '<CR>' in normal mode so that it inserts a blank line
-" and returns to normal mode
-map <CR> i<CR><ESC>
