@@ -26,25 +26,6 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
     alias l="ls -CF"
     #alias dir='ls --color=auto --format=vertical'
     #alias vdir='ls --color=auto --format=long'
-    alias ..='cd ..'
-    alias cd.='cd ..'   
-    alias cd..='cd ..'
-    alias v='vim'
-    alias vi='vim'
-    alias gt='git'
-    alias gaa='git add -A :/' 
-    alias ga='git add'
-    alias gs='git status'
-    alias gd='git diff'
-    alias gm='git merge'
-    alias gc='git commit -m'
-    alias gp='git push'
-    alias gf='git fetch upstream; git checkout master; git rebase upstream/master'
-    alias gr='git rebase --continue; git rebase --skip; git mergetool'
-    alias gpo='git push -f origin master'
-    alias gco='git checkout'
-    alias get='sudo apt-get install'
-    alias cl='clear'
     alias du='du -ch --max-depth=1'
     alias treeacl='tree -A -C -L 2'
  elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
@@ -281,8 +262,12 @@ fi
     alias rm="rm -i"
     alias mv="mv -i"
     alias cp="cp -i"
-    
+ 
+    alias ..='cd ..'
+    alias cd.='cd ..'   
     alias cd..='cd ..'
+    alias v='vim'
+    alias vi='vim'
     alias gt='git'
     alias gaa='git add -A :/' 
     alias ga='git add'
@@ -295,7 +280,8 @@ fi
     alias gr='git rebase --continue; git rebase --skip; git mergetool'
     alias gpo='git push -f origin master'
     alias gco='git checkout'
-    alias get='sudo apt-get install' 
+    alias get='sudo apt-get install'
+    alias cl='clear'
 
     set -o noclobber
 
