@@ -150,6 +150,10 @@ set whichwrap+=<,>,[,] "set arrow keys to go to next/prev lines at the end/begin
     map <CR> i<CR><ESC>
 
 
+" setup pathogen
+    execute pathogen#infect()
+
+
 " -------------------------------- Functions
 
 function! InitializeDirectories()

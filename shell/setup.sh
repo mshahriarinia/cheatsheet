@@ -83,6 +83,23 @@ echo "Downloading plugins for vim..."
     cd ..
     rm -rf tcomment_vim    # later on look into getting more efficient code snippets for different languages
 
+    # MRU: Most Recently Opened files in vim: To view it :MRU to close it q 
+    curl http://www.vim.org/scripts/download_script.php?src_id=20075 -o ~/.vim/plugin/mru.vim
+
+    # git clone https://github.com/scrooloose/syntastic.git 
+    # cd syntastic
+    # cp -R * ~/.vim/
+    # cd ..
+    # rm -rf syntastic    # later on look into getting more efficient code snippets for different languages
+
+    mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+    curl -so ~/.vim/autoload/pathogen.vim \
+        https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+    cd ~/.vim/bundle
+    git clone https://github.com/scrooloose/syntastic.git
+    cd -
+
     # taglist
     #curl http://hivelocity.dl.sourceforge.net/project/vim-taglist/vim-taglist/4.6/taglist_46.zip -o taglist_46.zip
     #unzip taglist_46.zip -d taglist_46
