@@ -1,3 +1,4 @@
+" TODO: Ctrl-s for save
 "set background=dark     " Assume a dark background
 set t_Co=256
 colorscheme mustang
@@ -149,10 +150,29 @@ set whichwrap+=<,>,[,] "set arrow keys to go to next/prev lines at the end/begin
     " map the return key '<CR>' in normal mode so that it inserts a blank line and returns to normal mode
     map <CR> i<CR><ESC>
 
+    :inoremap <c-s> <c-o>:Update<CR> "a
+    " If the current buffer has never been saved, it will have no name,
+" call the file browser to save it, otherwise just save it. i
+command -nargs=0 -bar Update if &modified 
+   \|    if empty(bufname('%'))
+   \|        browse confirm write
+   \|    else
+   \|        confirm write
+   \|    endif
+   \|endif
+nnoremap <silent> <C-S> :<C-u>Update<CR>
 
-" setup pathogen
-    execute pathogen#infect()
 
+" plugin specific settings
+    set autochdir   " This sets the current directory to the current file's directory not where vim started
+
+    " setup pathogen
+        execute pathogen#infect()
+   
+    " NERDtree 
+    let g:NERDTreeDirArrows=0
+    "map <silent> <F1> :NERDTreeToggle %:p:h<CR> " This maps my F1 key to toggle(open/close) NERDTree using the path 
+    "of the currently active buffer. If no buffer is open, it opens in the currently launched Macvim directory.    
 
 " -------------------------------- Functions
 
