@@ -7,25 +7,14 @@ mkdir ~/cheatsheetBackup
 
 echo "Backing up current settings to directory ~/cheatsheetBackup.."
 
-
-if [ "$(uname)" == "Darwin" ]  
-    then
-   echo ""    ;    # Do something under Mac OS X platform        
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]  
-then
-    # Do something under Linux platform
-    mv ~/.bashrc ~/cheatsheetBackup/.bashrc ;
-    cp .bashrc ~/ ;
-    source ~/.bashrc ;
-elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ] 
-then
-    echo "" # Do something under Windows NT platform
-fi
-
+mv ~/.bashrc ~/cheatsheetBackup/.bashrc ;
 mv ~/.vimrc ~/cheatsheetBackup/.vimrc.bak
 mv ~/.vim ~/cheatsheetBackup/.vim.bak
 mv ~/.tmux ~/cheatsheetBackup/.tmux
 mv ~/.tmux.conf ~/cheatsheetBackup/.tmux.conf
+
+cp .bashrc ~/ ;
+source ~/.bashrc ;
 
 echo "Moving new settings in place.."
 cp .vimrc ~/
@@ -34,7 +23,7 @@ cp .vimrc ~/
 
 
 cp .tmux.conf ~/
-cp -R .tmux/ ~/
+cp -R .tmux ~
 
 echo "Downloading plugins for vim..."
 

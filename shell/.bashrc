@@ -1,9 +1,11 @@
 
 
-f [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" == "Darwin" ]
+  then
     # Do something under Mac OS X platform        
     echo ""
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
+  then
     # Do something under Linux platform
     echo "Welcome `whoami` to `hostname`.             `date +"%a, %d %b %Y - %H:%M %p %Z"`"
     echo
@@ -25,7 +27,10 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     #alias dir='ls --color=auto --format=vertical'
     #alias vdir='ls --color=auto --format=long'
     alias ..='cd ..'
+    alias cd.='cd ..'   
     alias cd..='cd ..'
+    alias v='vim'
+    alias vi='vim'
     alias gt='git'
     alias gaa='git add -A :/' 
     alias ga='git add'
@@ -276,11 +281,27 @@ fi
     alias rm="rm -i"
     alias mv="mv -i"
     alias cp="cp -i"
+    
+    alias cd..='cd ..'
+    alias gt='git'
+    alias gaa='git add -A :/' 
+    alias ga='git add'
+    alias gs='git status'
+    alias gd='git diff'
+    alias gm='git merge'
+    alias gc='git commit -m'
+    alias gp='git push'
+    alias gf='git fetch upstream; git checkout master; git rebase upstream/master'
+    alias gr='git rebase --continue; git rebase --skip; git mergetool'
+    alias gpo='git push -f origin master'
+    alias gco='git checkout'
+    alias get='sudo apt-get install' 
+
     set -o noclobber
 
+## -----------------------------
       # make less more friendly for non-text input files, see lesspipe(1)
     [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
 
 
     # grep options
