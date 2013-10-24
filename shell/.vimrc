@@ -3,7 +3,10 @@
 set t_Co=256
 colorscheme mustang
 
-set number                      " always show line numbers
+"set number                      " always show line numbers, short hand is :set nu
+" relative number instead of absolute number of lines, which is done by :set number
+    set relativenumber   " short hand is     set rnu
+
 
 set title
 
@@ -20,9 +23,6 @@ set showmatch "Highlights matching brackets in programming languages
 "  %    :  saves and restores the buffer list
 "  n... :  where to save the viminfo files
 set viminfo='10,\"100,:20,%,n~/.viminfo
-
-
-
 
 
 
@@ -144,12 +144,17 @@ set whichwrap+=<,>,[,] "set arrow keys to go to next/prev lines at the end/begin
 "
     " map the backspace key '<BS>' in normal mode so that it deletes the preceding character and returns to normal mode
     map <BS> i<BS><ESC>l
-    map <TAB> i<TAB><ESC>l
+    map <TAB> i<TAB><space><ESC>l
     " map the space key '<space>' in normal mode so that it inserts a space and returns to normal mode
     map <space> i<space><ESC>l
     " map the return key '<CR>' in normal mode so that it inserts a blank line and returns to normal mode
     map <CR> i<CR><ESC>
 
+    " ESC takes the carret one to the left. To avoid that map it:
+    ":inoremap <silent> <Esc> <Esc>`^
+
+
+    " Mapping for Ctrl-s
     :inoremap <c-s> <c-o>:Update<CR> "a
     " If the current buffer has never been saved, it will have no name,
 " call the file browser to save it, otherwise just save it. i
@@ -173,6 +178,9 @@ nnoremap <silent> <C-S> :<C-u>Update<CR>
     let g:NERDTreeDirArrows=0
     "map <silent> <F1> :NERDTreeToggle %:p:h<CR> " This maps my F1 key to toggle(open/close) NERDTree using the path 
     "of the currently active buffer. If no buffer is open, it opens in the currently launched Macvim directory.    
+
+    " Ctrlp.vim does not search hidden files by default 
+    let g:ctrlp_show_hidden = 1 
 
 " -------------------------------- Functions
 

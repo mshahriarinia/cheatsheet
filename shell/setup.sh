@@ -97,9 +97,9 @@ echo "Downloading plugins for vim..."
     cd ..
     rm -rf tcomment_vim    # later on look into getting more efficient code snippets for different languages
 
-    # MRU: 
+    # MRU: SWITCHED TO CTRLP.VIM FOR MRU SEARCH
     # press :MRU Most Recently Opened files in vim: to close it q 
-    curl http://www.vim.org/scripts/download_script.php?src_id=20075 -o ~/.vim/plugin/mru.vim
+    # curl http://www.vim.org/scripts/download_script.php?src_id=20075 -o ~/.vim/plugin/mru.vim
 
     # git clone https://github.com/scrooloose/syntastic.git 
     # cd syntastic
@@ -118,6 +118,14 @@ echo "Downloading plugins for vim..."
     cd ~/.vim/bundle
     git clone https://github.com/scrooloose/syntastic.git
     cd -
+   
+    git clone git://github.com/kien/ctrlp.vim.git 
+    cd ctrlp.vim
+    cp -R * ~/.vim/
+    cd ..
+    rm -rf ctrlp.vim    
+
+ 
 
     # taglist
     #curl http://hivelocity.dl.sourceforge.net/project/vim-taglist/vim-taglist/4.6/taglist_46.zip -o taglist_46.zip
