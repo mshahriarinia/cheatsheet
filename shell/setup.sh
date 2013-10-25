@@ -107,14 +107,39 @@ echo "Downloading plugins for vim..."
     cd ~/.vim/bundle
     git clone https://github.com/scrooloose/syntastic.git
     cd -
-   
+  
+    # CtrlP 
+    # Fuzzy search for a file.       :CtrlPMixed searche_term 
+    # It will go up on the directory to find a .git or the parent and searches down there
     git clone git://github.com/kien/ctrlp.vim.git 
     cd ctrlp.vim
     cp -R * ~/.vim/
     cd ..
     rm -rf ctrlp.vim    
 
- 
+    # ack.vim
+    # grepping within vim and navigating back and forth         :Ack [options] {pattern} [{directory}] 
+    mkdir ~/bin 
+    curl http://beyondgrep.com/ack-2.10-single-file > ~/bin/ack && chmod 0755 !#:3 
+    PATH=$PATH:~/bin; export $PATH
+    git clone https://github.com/mileszs/ack.vim.git
+    cd ack.vim
+    cp -R * ~/.vim/
+    cd ..
+    rm -rf ack.vim    
+
+    # lusty for highlighted ack.vim  
+    #  :LustyFilesystemExplorer
+    #  :LustyFilesystemExplorerFromHere
+    #  :LustyBufferExplorer
+    #  :LustyBufferGrep (for searching through all open buffers)
+
+    #  <Leader>lf  - Opens filesystem explorer.
+    #  <Leader>lr  - Opens filesystem explorer at the directory of the current file.
+    #  <Leader>lb  - Opens buffer explorer.
+    #  <Leader>lg  - Opens buffer grep.   <--- use this 
+    # curl https://raw.github.com/sjbach/lusty/master/plugin/lusty-explorer.vim -o ~/.vim/plugin/lusty-explorer.vim 
+
 
     # taglist
     #curl http://hivelocity.dl.sourceforge.net/project/vim-taglist/vim-taglist/4.6/taglist_46.zip -o taglist_46.zip
