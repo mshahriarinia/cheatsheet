@@ -35,8 +35,8 @@ set viminfo='10,\"100,:20,%,n~/.viminfo
     set smartindent  "Automatically indents lines after opening a bracket in programming languages
     set shiftwidth=4                   " use indents of 4 spaces (on SHIFT key?)
     set expandtab                        " tabs are spaces, not tabs
-    set tabstop=4                     " an indentation every four columns, How much space Vim gives to a tab
-    set softtabstop=4                 " let backspace delete indent
+    set tabstop=2                     " an indentation every two columns, How much space Vim gives to a tab
+    set softtabstop=2                 " let backspace delete indent
     set pastetoggle=<F12>              " pastetoggle (sane indentation on pastes)  -------   Press F12 if you want to paste! similar to :set paste    and :set nopaste 
     set smarttab  "Improves tabbing
 
