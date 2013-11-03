@@ -266,8 +266,10 @@ fi
     alias ..='cd ..'
     alias cd.='cd ..'   
     alias cd..='cd ..'
+    
     alias v='vim'
     alias vi='vim'
+    
     alias gt='git'
     alias gaa='git add -A :/' 
     alias ga='git add'
@@ -276,10 +278,11 @@ fi
     alias gm='git merge'
     alias gc='git commit -m'
     alias gp='git push'
-    alias gf='git fetch upstream; git checkout master; git rebase upstream/master'
-    alias gr='git rebase --continue; git rebase --skip; git mergetool'
-    alias gpo='git push -f origin master'
+    alias gr0='git push -f origin master ' 
+    alias gr1='git fetch upstream; git checkout master; git rebase upstream/master'
+    alias gr2='git rebase --continue; git rebase --skip; git mergetool'
     alias gco='git checkout'
+   
     alias get='sudo apt-get install'
     alias cl='clear'
 

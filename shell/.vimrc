@@ -3,9 +3,9 @@
 set t_Co=256
 colorscheme mustang
 
-"set number                      " always show line numbers, short hand is :set nu
-" relative number instead of absolute number of lines, which is done by :set number
-    set relativenumber   " short hand is     set rnu
+set number                      " always show line numbers, short hand is :set nu
+ "    set relativenumber   " short hand is  set rnu     -- relative number instead of absolute number of lines, which is done by :set number
+
 
 
 set title
