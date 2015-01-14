@@ -172,7 +172,7 @@ nnoremap <silent> <C-S> :<C-u>Update<CR>
     set autochdir   " This sets the current directory to the current file's directory not where vim started
 
     " setup pathogen
-        execute pathogen#infect()
+       " execute pathogen#infect()
    
     " NERDtree 
     let g:NERDTreeDirArrows=0
