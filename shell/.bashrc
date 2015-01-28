@@ -14,10 +14,11 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
     #echo -e "\e[00;31meth0 IP address\e[00m: ` /sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'`         \e[00;31mFree memory:\e[00m   `free | grep Mem | awk '{ printf("%.4f%\n", $4/$2 * 100.0) }'`"
     #echo
     #echo -e "\e[00;31mDisk usage:\e[00m"
-    df -khP | grep "^/dev/" | tr -s ' ' | cut -d" " -f1,5
+    # df -khP | grep "^/dev/" | tr -s ' ' | cut -d" " -f1,5
     #echo
     #echo
     #echo
+    echo ""
 
 # Non-Mac aliases: Listing, directories, and motion
     alias ls='ls --color=auto'
