@@ -8,7 +8,6 @@ if [ "$(uname)" == "Darwin" ]; then
     #export CLICOLOR=1
     #export LSCOLORS=ExFxCxDxBxegedabagacad
     #alias ls='ls -GpF' # -p adds a slash after each directory. -F which in addition puts an * after executables, | after pipes, @ after symlinks, et cetera.
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='ls -GpFh'
