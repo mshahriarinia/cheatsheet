@@ -1,11 +1,15 @@
 
 
-#if [ "$(uname)" == "Darwin" ]
-#  then
+if [ "$(uname)" == "Darwin" ]; then
     # Do something under Mac OS X platform        
-#    echo ""
-#elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
-#  then
+    alias docs='cd ~/Documents'
+
+    alias dw='cd ~/Downloads/'
+    #export CLICOLOR=1
+    #export LSCOLORS=ExFxCxDxBxegedabagacad
+    alias ls='ls -GpF' # -p adds a slash after each directory. -F which in addition puts an * after executables, | after pipes, @ after symlinks, et cetera.
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
+  then
     # Do something under Linux platform
     #echo "Welcome `whoami` to `hostname`.             `date +"%a, %d %b %Y - %H:%M %p %Z"`"
     #echo
@@ -15,13 +19,9 @@
     #echo
     #echo -e "\e[00;31mDisk usage:\e[00m"
     # df -khP | grep "^/dev/" | tr -s ' ' | cut -d" " -f1,5
-    #echo
-    #echo
-    #echo
-    #echo ""
 
 # Non-Mac aliases: Listing, directories, and motion
-    alias ls='ls --color=auto'
+    alias ls='ls --color=auto -GpF'
     alias ll="ls -alrtF --color"
     alias la="ls -A"
     alias l="ls -CF"
@@ -32,7 +32,7 @@
 # elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
     # Do something under Windows NT platform
 #    echo ""
-#fi
+fi
 
 #
 # https://raw.github.com/startup-class/dotfiles/master/.bashrc
