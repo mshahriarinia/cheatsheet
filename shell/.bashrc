@@ -3,7 +3,6 @@
 if [ "$(uname)" == "Darwin" ]; then
     # Do something under Mac OS X platform        
     alias docs='cd ~/Documents'
-
     alias dw='cd ~/Downloads/'
     #export CLICOLOR=1
     #export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -25,6 +24,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
     alias ll="ls -alrtF --color"
     alias la="ls -A"
     alias l="ls -CF"
+    alias docs='cd ~/Documents'
+    alias dw='cd ~/Downloads/'
     #alias dir='ls --color=auto --format=vertical'
     #alias vdir='ls --color=auto --format=long'
     alias du='du -ch --max-depth=1'
