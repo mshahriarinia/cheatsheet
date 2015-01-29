@@ -10,6 +10,7 @@ if [ "$(uname)" == "Darwin" ]; then
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
   then
     # Do something under Linux platform
+    # DO NOT PRINT ANY WELCOME OR STATISTICS MESSAGES AS IT MESSES UP WITH SCP OR FILEZILLA CONNECTING
     #echo "Welcome `whoami` to `hostname`.             `date +"%a, %d %b %Y - %H:%M %p %Z"`"
     #echo
     #echo -e "\e[00;31mOperating system:\e[00m `find /etc/ -type f -maxdepth 1  -name '*release*' 2> /dev/null | xargs cat | grep --color=never 'CentOS\|Ubuntu\|Red Hat'`"
