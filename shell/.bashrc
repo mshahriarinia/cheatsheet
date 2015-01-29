@@ -3,14 +3,18 @@
 if [ "$(uname)" == "Darwin" ]; then
     # Do something under Mac OS X platform        
     alias docs='cd ~/Documents'
+
     alias dw='cd ~/Downloads/'
     #export CLICOLOR=1
     #export LSCOLORS=ExFxCxDxBxegedabagacad
-    alias ls='ls -GpF' # -p adds a slash after each directory. -F which in addition puts an * after executables, | after pipes, @ after symlinks, et cetera.
+    #alias ls='ls -GpF' # -p adds a slash after each directory. -F which in addition puts an * after executables, | after pipes, @ after symlinks, et cetera.
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+alias ls='ls -GpFh'
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
   then
     # Do something under Linux platform
-    # DO NOT PRINT ANY WELCOME OR STATISTICS MESSAGES AS IT MESSES UP WITH SCP OR FILEZILLA CONNECTING
     #echo "Welcome `whoami` to `hostname`.             `date +"%a, %d %b %Y - %H:%M %p %Z"`"
     #echo
     #echo -e "\e[00;31mOperating system:\e[00m `find /etc/ -type f -maxdepth 1  -name '*release*' 2> /dev/null | xargs cat | grep --color=never 'CentOS\|Ubuntu\|Red Hat'`"
@@ -25,8 +29,6 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
     alias ll="ls -alrtF --color"
     alias la="ls -A"
     alias l="ls -CF"
-    alias docs='cd ~/Documents'
-    alias dw='cd ~/Downloads/'
     #alias dir='ls --color=auto --format=vertical'
     #alias vdir='ls --color=auto --format=long'
     alias du='du -ch --max-depth=1'
