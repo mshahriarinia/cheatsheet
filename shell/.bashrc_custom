@@ -1,0 +1,12 @@
+# PUT ALL PATH DEFINITIONS, ALIAS DEFINITION HERE.
+
+pathadd() {    # use pathadd to make sure you are not keep on adding a path that is already there.
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        #PATH="${PATH:+"$PATH:"}$1" # add to the end
+        PATH="$1${PATH:+":$PATH"}"  # add to the front
+    fi
+}
+
+# pathadd /home/morteza/zproject/node-v0.12.2-linux-x64/bin
+
+

@@ -14,10 +14,9 @@ mv ~/.tmux ~/cheatsheetBackup/.tmux
 mv ~/.tmux.conf ~/cheatsheetBackup/.tmux.conf
 
 cp .bashrc ~/ ;
+cp .bashrc_custom ~/
 source ~/.bashrc ;
 
-echo "# PUT ALL PATH DEFINITIONS, ALIAS DEFINITION HERE." >> ~/.bashrc_custom
-echo '#export PATH="/Users/morteza/Downloads/transfer/zproject/scala-2.11.5/bin/:$PATH"' >> ~/.bashrc_custom 
 
 echo "Moving new settings in place.."
 cp .vimrc ~/
