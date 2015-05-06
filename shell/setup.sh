@@ -122,14 +122,14 @@ echo "Downloading plugins for vim..."
 
     # ack.vim
     # grepping within vim and navigating back and forth         :Ack [options] {pattern} [{directory}] 
-    mkdir ~/bin 
-    curl http://beyondgrep.com/ack-2.10-single-file > ~/bin/ack && chmod 0755 !#:3 
-    PATH=$PATH:~/bin; export $PATH
-    git clone https://github.com/mileszs/ack.vim.git
-    cd ack.vim
-    cp -R * ~/.vim/
-    cd ..
-    rm -rf ack.vim    
+    #mkdir ~/bin 
+    #curl http://beyondgrep.com/ack-2.10-single-file > ~/bin/ack && chmod 0755 !#:3 
+    #PATH=$PATH:~/bin; export $PATH
+    #git clone https://github.com/mileszs/ack.vim.git
+    #cd ack.vim
+    #cp -R * ~/.vim/
+    #cd ..
+    #rm -rf ack.vim    
 
     # lusty for highlighted ack.vim  
     #  :LustyFilesystemExplorer
