@@ -16,6 +16,8 @@ mv ~/.tmux.conf ~/cheatsheetBackup/.tmux.conf
 cp .bashrc ~/ ;
 source ~/.bashrc ;
 
+echo "# PUT ALL PATH DEFINITIONS, ALIAS DEFINITION HERE." >> ~/.bashrc_custom
+
 echo "Moving new settings in place.."
 cp .vimrc ~/
 #cp -R .vim/ ~/
