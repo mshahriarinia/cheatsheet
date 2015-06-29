@@ -8,6 +8,8 @@ mkdir ~/cheatsheetBackup
 echo "Backing up current settings to directory ~/cheatsheetBackup.."
 
 mv ~/.bashrc ~/cheatsheetBackup/.bashrc ;
+mv ~/.bashrc_custom ~/cheatsheetBackup/.bashrc_custom ;
+
 mv ~/.vimrc ~/cheatsheetBackup/.vimrc.bak
 mv ~/.vim ~/cheatsheetBackup/.vim.bak
 mv ~/.tmux ~/cheatsheetBackup/.tmux
