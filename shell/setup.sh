@@ -1,6 +1,8 @@
 #!/bin/bash
 
 echo "call this script from its own directory, not from another directory"
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+echo "script is located in this directory: ${DIR}"
 
 time_stamp=$(date +%Y-%m-%d--%T)
 time_stamp="$(sed s/[:]/-/g <<<$time_stamp)" # replace : to - to make sure it is a legitimate file name
