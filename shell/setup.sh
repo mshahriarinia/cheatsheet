@@ -1,19 +1,24 @@
 #!/bin/bash
 
+echo "call this script from its own directory, not from another directory"
 
-rm -rf  ~/cheatsheetBackup
+time_stamp=$(date +%Y-%m-%d--%T)
+time_stamp="$(sed s/[:]/-/g <<<$time_stamp)" # replace : to - to make sure it is a legitimate file name
+backuppath=~/cheatsheetBackup_"${time_stamp}"
 
-mkdir ~/cheatsheetBackup
+mkdir -p $backuppath
+cd  $backuppath
+pwd
 
 echo "Backing up current settings to directory ~/cheatsheetBackup.."
 
-mv ~/.bashrc ~/cheatsheetBackup/.bashrc ;
-mv ~/.bashrc_custom ~/cheatsheetBackup/.bashrc_custom ;
+mv ~/.bashrc $backuppath/.bashrc ;
+mv ~/.bashrc_custom $backuppath/.bashrc_custom ;
 
-mv ~/.vimrc ~/cheatsheetBackup/.vimrc.bak
-mv ~/.vim ~/cheatsheetBackup/.vim.bak
-mv ~/.tmux ~/cheatsheetBackup/.tmux
-mv ~/.tmux.conf ~/cheatsheetBackup/.tmux.conf
+mv ~/.vimrc $backuppath/.vimrc.bak
+mv ~/.vim $backuppath/.vim.bak
+mv ~/.tmux $backuppath/.tmux
+mv ~/.tmux.conf $backuppath/.tmux.conf
 
 cp .bashrc ~/ ;
 cp .bashrc_custom ~/
@@ -40,7 +45,7 @@ echo "Downloading plugins for vim..."
     cd n*
     cp -R * ~/.vim/
     cd ..
-    rm -rf n*
+    #rm -rf n*
 
         # A helper for autocomplete
         curl   https://bitbucket.org/ns9tks/vim-l9/get/tip.zip -o tip.zip
@@ -49,7 +54,7 @@ echo "Downloading plugins for vim..."
         cd n*
         cp -R * ~/.vim/
         cd ..
-        rm -rf n*
+        #rm -rf n*
 
     # easymotion: 
     # Say you are working on a code or text but you have to go to the end of the screen in the middle of a 
