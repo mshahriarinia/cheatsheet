@@ -41,20 +41,18 @@ echo "Downloading plugins for vim..."
     # this I haven't tried yet])
     curl https://bitbucket.org/ns9tks/vim-autocomplpop/get/tip.zip -o tip.zip
     unzip tip.zip
-    rm tip.zip
     cd n*
     cp -R * ~/.vim/
     cd ..
-    #rm -rf n*
+    
 
         # A helper for autocomplete
         curl   https://bitbucket.org/ns9tks/vim-l9/get/tip.zip -o tip.zip
         unzip tip.zip
-        rm tip.zip
         cd n*
         cp -R * ~/.vim/
         cd ..
-        #rm -rf n*
+        
 
     # easymotion: 
     # Say you are working on a code or text but you have to go to the end of the screen in the middle of a 
@@ -64,7 +62,7 @@ echo "Downloading plugins for vim..."
     cd vim-easymotion
     cp -R * ~/.vim/
     cd ..
-    rm -rf vim-easymotion
+    
     
     # NERDTree
     # press :NERDTree and browse files. Then press ? to view short-cut keys, I for showing hidden files and s to open 
@@ -75,7 +73,7 @@ echo "Downloading plugins for vim..."
     cd nerdtree 
     cp -R * ~/.vim/
     cd ..
-    rm -rf nerdtree
+    
    
     # SnipMate
     # Just type in the first few words of a common term in any language that it suports and it is going to create 
@@ -85,15 +83,13 @@ echo "Downloading plugins for vim..."
     cd snipmate.vim
     cp -R * ~/.vim/
     cd ..
-    rm -rf snipmate.vim    # later on look into getting more efficient code snippets for different languages
-   
+
     # tcomment
     # press Ctrl_ _ to toggle comment. to block comment: Ctrl_b the text you have selected in visual mode
     git clone https://github.com/tomtom/tcomment_vim.git 
     cd tcomment_vim
     cp -R * ~/.vim/
     cd ..
-    rm -rf tcomment_vim    # later on look into getting more efficient code snippets for different languages
 
     # MRU: SWITCHED TO CTRLP.VIM FOR MRU SEARCH
     # press :MRU Most Recently Opened files in vim: to close it q 
@@ -103,7 +99,6 @@ echo "Downloading plugins for vim..."
     # cd syntastic
     # cp -R * ~/.vim/
     # cd ..
-    # rm -rf syntastic    # later on look into getting more efficient code snippets for different languages
 
     # pathogen 
     # is a vim plugin instuller to avoid dealing with copying latest stuff. It will take care of it.
@@ -124,7 +119,6 @@ echo "Downloading plugins for vim..."
     cd ctrlp.vim
     cp -R * ~/.vim/
     cd ..
-    rm -rf ctrlp.vim    
 
     # ack.vim
     # grepping within vim and navigating back and forth         :Ack [options] {pattern} [{directory}] 
@@ -135,7 +129,6 @@ echo "Downloading plugins for vim..."
     #cd ack.vim
     #cp -R * ~/.vim/
     #cd ..
-    #rm -rf ack.vim    
 
     # lusty for highlighted ack.vim  
     #  :LustyFilesystemExplorer
@@ -156,8 +149,7 @@ echo "Downloading plugins for vim..."
     #cd taglist_46
     #cp -R * ~/.vim/
     #cd ..
-    #rm -rf taglist_46 
- 
+
     # For HTML Also check out 
     # http://net.tutsplus.com/tutorials/other/vim-essential-plugin-surround/
     # http://net.tutsplus.com/tutorials/other/vim-essential-plugin-sparkup/
