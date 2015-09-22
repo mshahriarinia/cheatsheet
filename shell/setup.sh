@@ -10,7 +10,8 @@ backuppath=~/cheatsheetBackup_"${time_stamp}"
 
 mkdir -p $backuppath
 cd  $backuppath
-pwd
+pwd # just show where stuff are going to be stored
+cd - # return to whereever you were
 
 echo "Backing up current settings to directory ~/cheatsheetBackup.."
 
