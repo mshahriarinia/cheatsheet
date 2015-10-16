@@ -1,4 +1,9 @@
 #!/bin/bash
+# Check out these vim plugins and USE!
+# http://stackoverflow.com/a/5170109   https://github.com/Valloric/YouCompleteMe
+# vim python syntax highlightin?
+# vim sytax error marker?
+
 
 echo "call this script from its own directory, not from another directory"
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
