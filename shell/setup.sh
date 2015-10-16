@@ -92,9 +92,11 @@ echo "Downloading plugins for vim..."
     
    
     # SnipMate
-    # Just type in the first few words of a common term in any language that it suports and it is going to create 
-    # the rest of the content for you! Like in a java file you type in for and press tab, it's gonna print out 
-    # for(int i =0; i &lt; ; i++) {}  What else would you want for a text editor?
+    # Just type in the first few characters of a keyword, it is going to generate the rest.
+    # checkout ~/.vim/snippets/ and make your own
+    #
+    # In a java file you type in 'for' and press tab, it's gonna print out 
+    # for(int i =0; i &lt; ; i++) {}  
     git clone https://github.com/msanders/snipmate.vim.git
     cd snipmate.vim
     cp -R * ~/.vim/
