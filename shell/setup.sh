@@ -68,9 +68,9 @@ echo "Downloading plugins for vim..."
         
 
     # easymotion: 
-    # Say you are working on a code or text but you have to go to the end of the screen in the middle of a 
-    # line to change something. press \\w and the initials of the word representing there, and there you go! no more 
-    # arrow keys or searches, etc! Sweet!
+    # Jump the cursor in the middle of screen to some word
+    #
+    # \\w ENTER initials of the word you want to jump to
     git clone https://github.com/Lokaltog/vim-easymotion.git
     cd vim-easymotion
     cp -R * ~/.vim/
