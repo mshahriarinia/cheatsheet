@@ -3,6 +3,11 @@
 # http://stackoverflow.com/a/5170109   https://github.com/Valloric/YouCompleteMe
 # vim python syntax highlightin?
 # vim sytax error marker?
+# https://github.com/kien/rainbow_parentheses.vim     https://github.com/luochen1990/rainbow
+# http://www.fullstackpython.com/vim.html
+# https://github.com/chriskempson/base16-vim
+# Turn Vim & Tmux into an IDE like environment - YouTube https://www.youtube.com/watch?v=YD9aFIvlQYs 
+
 
 
 echo "call this script from its own directory, not from another directory"
@@ -77,6 +82,9 @@ echo "Downloading plugins for vim..."
     # a file in a vertical split of the pane. To create a bookmark :Bookmark myBookmark. then anywhere you press B will
     # show you bookmarks. CD and also C limit directories. q will quit. press T to open a file in tab. Ctrl ww will
     # toggle between. They're called windows in vim parlance: Ctrl wh or Ctrl wl also switch to left and right
+    #
+    # To run    :NERDTree
+    # To switch between windows Ctrl-w    HJKL
     git clone https://github.com/scrooloose/nerdtree.git
     cd nerdtree 
     cp -R * ~/.vim/
