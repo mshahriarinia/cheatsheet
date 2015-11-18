@@ -36,7 +36,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
     # Do something under Windows NT platform
 #    echo ""
 fi
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="TERM=screen-256color-bce tmux"    # http://stackoverflow.com/questions/10158508/lose-vim-colorscheme-in-tmux-mode
 
 #
 # https://raw.github.com/startup-class/dotfiles/master/.bashrc
