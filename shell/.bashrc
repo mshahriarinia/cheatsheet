@@ -342,6 +342,8 @@ fi
     fi
 
 
+    complete -d cd pushd rmdir  #  [ is there any way to configure it to complete ] only directories for the command cd using tab?    http://superuser.com/questions/171999/smart-tab-completion-for-directories/267627#267627
+
     ## Define any user-specific variables you want here.
     source ~/.bashrc_custom
 
