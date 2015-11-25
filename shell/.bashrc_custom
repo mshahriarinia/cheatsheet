@@ -1,4 +1,4 @@
-# update your bash to 4.3 
+# update your bash to version 4
 # PUT ALL PATH DEFINITIONS, ALIAS DEFINITION HERE.
 
 pathadd() {    # use pathadd to make sure you are not keep on adding a path that is already there.
