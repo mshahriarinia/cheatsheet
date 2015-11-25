@@ -392,6 +392,8 @@ extract () {
    fi
  }
 
+# directory and file sizes of current location
+alias du="du -scHhr * | sort -n"
 
 # # ignore case, long prompt, exit if it fits on one screen, allow colors for ls and grep colors
 export LESS="-iMFXR"
