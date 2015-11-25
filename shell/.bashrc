@@ -343,7 +343,7 @@ fi
 
 
     complete -d cd pushd rmdir  #  [ is there any way to configure it to complete ] only directories for the command cd using tab?    http://superuser.com/questions/171999/smart-tab-completion-for-directories/267627#267627
-
+    # complete -f vim # only tab files for vim, but you might sometimes want to open files inside directories for vim, so this is commented for now
     ## Define any user-specific variables you want here.
     source ~/.bashrc_custom
 
