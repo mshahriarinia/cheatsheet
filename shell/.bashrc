@@ -10,7 +10,6 @@ if [ "$(uname)" == "Darwin" ]; then
     #alias ls='ls -GpF' # -p adds a slash after each directory. -F which in addition puts an * after executables, | after pipes, @ after symlinks, et cetera.
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
-alias ls='ls -GpFh'
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
   then
     # Do something under Linux platform
