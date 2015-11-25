@@ -354,6 +354,26 @@ fi
     export LESS_TERMCAP_ue=$'\E[0m'
     export LESS_TERMCAP_us=$'\E[01;32m'
     
+    
+#  No more cd ../../../.. but up 4    
+# Goes up many dirs as the number passed as argument, 
+# if none goes up by 1 by default (found in a link in a comment in stackoverflow.com and modified a bit)
+# http://serverfault.com/questions/3743/what-useful-things-can-one-add-to-ones-bashrc
+up(){
+  local d=""
+  limit=$1
+  for ((i=1 ; i <= limit ; i++))
+    do
+      d=$d/..
+    done
+  d=$(echo $d | sed 's/^\///')
+  if [ -z "$d" ]; then
+    d=..
+  fi
+  cd $d
+}
+    
+    
     ## Define any user-specific variables you want here.
     source ~/.bashrc_custom
 
