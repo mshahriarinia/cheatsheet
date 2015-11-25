@@ -24,9 +24,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
 
 # Non-Mac aliases: Listing, directories, and motion
     alias ls='ls --color=auto -GpF'
-    alias ll="ls -alrtF --color"
-    alias la="ls -A"
-    alias l="ls -CF"
+    alias ll="ls -alrtFSh"
     #alias dir='ls --color=auto --format=vertical'
     #alias vdir='ls --color=auto --format=long'
     alias du='du -ch --max-depth=1'
