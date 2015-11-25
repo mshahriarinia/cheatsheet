@@ -372,8 +372,10 @@ up(){
   fi
   cd $d
 }
+
+# # ignore case, long prompt, exit if it fits on one screen, allow colors for ls and grep colors
+export LESS="-iMFXR"
     
-    
-    ## Define any user-specific variables you want here.
-    source ~/.bashrc_custom
+## Define any user-specific variables you want here.
+source ~/.bashrc_custom
 
