@@ -344,6 +344,16 @@ fi
 
     complete -d cd pushd rmdir  #  [ is there any way to configure it to complete ] only directories for the command cd using tab?    http://superuser.com/questions/171999/smart-tab-completion-for-directories/267627#267627
     # complete -f vim # only tab files for vim, but you might sometimes want to open files inside directories for vim, so this is commented for now
+    
+    # make man pages colorful for easy readbility
+    export LESS_TERMCAP_mb=$'\E[01;31m'
+    export LESS_TERMCAP_md=$'\E[01;31m'
+    export LESS_TERMCAP_me=$'\E[0m'
+    export LESS_TERMCAP_se=$'\E[0m'
+    export LESS_TERMCAP_so=$'\E[01;44;33m'
+    export LESS_TERMCAP_ue=$'\E[0m'
+    export LESS_TERMCAP_us=$'\E[01;32m'
+    
     ## Define any user-specific variables you want here.
     source ~/.bashrc_custom
 
