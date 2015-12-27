@@ -52,11 +52,11 @@ echo "Downloading plugins for vim..."
     # autocomplpop
     # will keep on creating autocomplete boxes for you based on other words in the file (or dictionary of keywords 
     # this I haven't tried yet])
-    curl https://bitbucket.org/ns9tks/vim-autocomplpop/get/tip.zip -o tip.zip
-    unzip tip.zip
-    cd n*
-    cp -R * ~/.vim/
-    cd ..
+    #curl https://bitbucket.org/ns9tks/vim-autocomplpop/get/tip.zip -o tip.zip
+    #unzip tip.zip
+    #cd n*
+    #cp -R * ~/.vim/
+    #cd ..
     
 
         # A helper for autocomplete
