@@ -271,6 +271,8 @@ fi
     
     alias v='vim'
     alias vi='vim'
+    alias vcat='~/cheatsheet/shell/bin/vcat'
+    alias vimcat='~/cheatsheet/shell/bin/vcat'
     
     alias gt='git'
     alias gaa='git add -A :/' 
