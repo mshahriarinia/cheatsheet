@@ -274,19 +274,12 @@ fi
     alias vcat='~/cheatsheet/shell/bin/vcat'
     alias vimcat='~/cheatsheet/shell/bin/vcat'
     
-    alias gt='git'
-    alias gaa='git add -A :/' 
-    alias ga='git add'
+    alias gaa='git add -A :/' # Add everything, modified, deleted, added
+    alias gau='git add -u' # ONLY stage the files that are already being tracked for modification and deletion
     alias gs='git status'
-    alias gd='git diff'
-    alias gm='git merge'
     alias gc='git commit -m'
     alias gp='git push'
-    alias gr0='git push -f origin master ' 
-    alias gr1='git fetch upstream; git checkout master; git rebase upstream/master'
-    alias gr2='git rebase --continue; git rebase --skip; git mergetool'
-    alias gco='git checkout'
-   
+
     alias get='sudo apt-get install'
     alias cl='clear'
 
