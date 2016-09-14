@@ -277,6 +277,8 @@ fi
     alias gaa='git add -A :/' # Add everything, modified, deleted, added
     alias gau='git add -u' # ONLY stage the files that are already being tracked for modification and deletion
     alias gs='git status'
+    alias gb='git branch'
+    alias gl='git log'
     alias gc='git commit -m'
     alias gp='git push'
 
