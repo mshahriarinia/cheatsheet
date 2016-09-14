@@ -10,3 +10,6 @@ pathadd() {    # use pathadd to make sure you are not keep on adding a path that
 
 # pathadd /home/morteza/zproject/node-v0.12.2-linux-x64/bin
 pathadd ~/cheatsheet/shell/bin
+
+# brew install thefuck
+# add to path: nodejs, python, java, torch
