@@ -12,4 +12,5 @@ pathadd() {    # use pathadd to make sure you are not keep on adding a path that
 pathadd ~/cheatsheet/shell/bin
 
 # brew install thefuck
+# eval $(thefuck --alias)
 # add to path: nodejs, python, java, torch
