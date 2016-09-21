@@ -281,10 +281,12 @@ fi
     alias gl='git log'
     alias gc='git commit -m'
     alias gp='git push'
-    alias gr="temp=$(git rev-parse --abbrev-ref HEAD); git checkout master; git pull; git checkout $temp; git merge --no-ff master"
+    alias gr='temp=$(git rev-parse --abbrev-ref HEAD); git checkout master; git pull; git checkout $temp; git merge --no-ff master'
 
     alias get='sudo apt-get install'
     alias cl='clear'
+    
+    alias u='up'
 
     set -o noclobber
 
