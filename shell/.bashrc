@@ -279,7 +279,7 @@ fi
     alias gs='git status'
     alias gb='git branch'
     alias gl='git log'
-    alias gld='git log -- .'  # git log for this directory
+    alias gld='git log -- .'  # git log for this directory   git log -p -- .      to show detailed modifications 
     alias glb='git log --first-parent'  # git log for this branch
     alias gc='git commit -m'
     alias gp='git push'
