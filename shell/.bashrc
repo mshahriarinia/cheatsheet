@@ -279,6 +279,8 @@ fi
     alias gs='git status'
     alias gb='git branch'
     alias gl='git log'
+    alias gld='git log -- .'  # git log for this directory
+    alias glb='git log --first-parent'  # git log for this branch
     alias gc='git commit -m'
     alias gp='git push'
     alias gr='temp=$(git rev-parse --abbrev-ref HEAD); git checkout master; git pull; git checkout $temp; git merge --no-ff master'
