@@ -1,7 +1,7 @@
 
 
 if [ "$(uname)" == "Darwin" ]; then
-    # Do something under Mac OS X platform        
+    # Do something under Mac OS X platform
     alias docs='cd ~/Documents'
 
     alias dw='cd ~/Downloads/'
@@ -16,14 +16,14 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]
     #echo "Welcome `whoami` to `hostname`.             `date +"%a, %d %b %Y - %H:%M %p %Z"`"
     #echo
     #echo -e "\e[00;31mOperating system:\e[00m `find /etc/ -type f -maxdepth 1  -name '*release*' 2> /dev/null | xargs cat | grep --color=never 'CentOS\|Ubuntu\|Red Hat'`"
-    #echo 
+    #echo
     #echo -e "\e[00;31meth0 IP address\e[00m: ` /sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'`         \e[00;31mFree memory:\e[00m   `free | grep Mem | awk '{ printf("%.4f%\n", $4/$2 * 100.0) }'`"
     #echo
     #echo -e "\e[00;31mDisk usage:\e[00m"
     # df -khP | grep "^/dev/" | tr -s ' ' | cut -d" " -f1,5
 
 # Non-Mac aliases: Listing, directories, and motion
-    alias ls='ls --color=auto -GpF'
+   # alias ls='ls --color=auto -GpF'
     alias ll="ls -alrtFSh"
     #alias dir='ls --color=auto --format=vertical'
     #alias vdir='ls --color=auto --format=long'
@@ -46,8 +46,8 @@ alias tmux="TERM=screen-256color-bce tmux"    # http://stackoverflow.com/questio
 #
 #    2) .bash_profile is the *login* config for bash, launched upon first connection.
 #       .bash_profile imports .bashrc, but not vice versa.
-#       
-#           
+#
+#
 # When using GNU screen:
 #
 #    1) .bash_profile is loaded the first time you login, and should be used
@@ -128,7 +128,7 @@ fi
 # non-interactive one is the bash environment used in scripts.
 #if [ "$PS1" ]; then
 
-#    if [ -x /usr/bin/tput ]; then 
+#    if [ -x /usr/bin/tput ]; then
 #        if [ "x`tput kbs`" != "x" ]; then # We can't do this with "dumb" terminal
 #            stty erase `tput kbs`
 #        elif [ -x /usr/bin/wc ]; then
@@ -264,31 +264,37 @@ fi
     alias rm="rm -i"
     alias mv="mv -i"
     alias cp="cp -i"
- 
+
     alias ..='cd ..'
-    alias cd.='cd ..'   
+    alias cd.='cd ..'
     alias cd..='cd ..'
-    
+
     alias v='vim'
     alias vi='vim'
     alias vcat='~/cheatsheet/shell/bin/vcat'
     alias vimcat='~/cheatsheet/shell/bin/vcat'
-    
+
+    alias gt='git'
     alias gaa='git add -A :/' # Add everything, modified, deleted, added
     alias gau='git add -u' # ONLY stage the files that are already being tracked for modification and deletion
+    alias ga='git add'
     alias gs='git status'
     alias gb='git branch'
-    alias gl='git log'
-    alias gld='git log -- .'  # git log for this directory   git log -p -- .      to show detailed modifications 
-    alias glb='git log --first-parent'  # git log for this branch
+    alias gd='git diff'
+    alias gm='git merge'
     alias gc='git commit -m'
     alias gp='git push'
+    alias gp='temp=$(git rev-parse --abbrev-ref HEAD); git push origin $temp'
+    #   alias gr0='git push -f origin master '
+ #   alias gr1='git fetch upstream; git checkout master; git rebase upstream/master'
+ #   alias gr2='git rebase --continue; git rebase --skip; git mergetool'
+    alias gco='git checkout'
     alias gr='temp=$(git rev-parse --abbrev-ref HEAD); git checkout master; git pull; git checkout $temp; git merge --no-ff master'
-
+    alias gl='git log'
+    alias gld='git log -- .'  # git log for this directory
+    alias glb='git log --first-parent'  # git log for this branch
     alias get='sudo apt-get install'
     alias cl='clear'
-    
-    alias u='up'
 
     set -o noclobber
 
@@ -298,7 +304,8 @@ fi
 
 
     # grep options
-    export GREP_OPTIONS='--color=auto'
+    # grep --color it implies grep --color=auto which detects whether the output is a terminal and if so enables colors. However, when it detects a pipe it disables coloring.
+    export GREP_OPTIONS='--color=always'     #'--color=auto'
     export GREP_COLOR='1;31' # green for matches
 
     # sort options
@@ -309,7 +316,7 @@ fi
 
 
 
-# Enable programmable completion features (you don't need to enable                                                                                                                                                                      
+# Enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
     if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -332,7 +339,7 @@ fi
 ## ------------------------------
 
     # Load other shell settings specific to different aplications
-    if [ "x$SHLVL" != "x1" ]; then # We're not a login shell                                                               
+    if [ "x$SHLVL" != "x1" ]; then # We're not a login shell
         for i in /etc/profile.d/*.sh; do
             if [ -r "$i" ]; then
                 . $i
@@ -343,7 +350,7 @@ fi
 
     complete -d cd pushd rmdir  #  [ is there any way to configure it to complete ] only directories for the command cd using tab?    http://superuser.com/questions/171999/smart-tab-completion-for-directories/267627#267627
     # complete -f vim # only tab files for vim, but you might sometimes want to open files inside directories for vim, so this is commented for now
-    
+
     # make man pages colorful for easy readbility
     export LESS_TERMCAP_mb=$'\E[01;31m'
     export LESS_TERMCAP_md=$'\E[01;31m'
@@ -352,10 +359,10 @@ fi
     export LESS_TERMCAP_so=$'\E[01;44;33m'
     export LESS_TERMCAP_ue=$'\E[0m'
     export LESS_TERMCAP_us=$'\E[01;32m'
-    
-    
-#  No more cd ../../../.. but up 4    
-# Goes up many dirs as the number passed as argument, 
+
+
+#  No more cd ../../../.. but up 4
+# Goes up many dirs as the number passed as argument,
 # if none goes up by 1 by default (found in a link in a comment in stackoverflow.com and modified a bit)
 # http://serverfault.com/questions/3743/what-useful-things-can-one-add-to-ones-bashrc
 up(){
@@ -399,7 +406,6 @@ alias du="du -scHhr * | sort -n"
 
 # # ignore case, long prompt, exit if it fits on one screen, allow colors for ls and grep colors
 export LESS="-iMFXR"
-    
+
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
-
