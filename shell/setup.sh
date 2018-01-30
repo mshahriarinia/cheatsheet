@@ -25,6 +25,7 @@ cd - # return to whereever you were
 
 echo "Backing up current settings to directory ~/cheatsheetBackup.."
 
+mv ~/.bash_profile $backuppath/.bash_profile ;
 mv ~/.bashrc $backuppath/.bashrc ;
 mv ~/.bashrc_custom $backuppath/.bashrc_custom ;
 
@@ -33,6 +34,7 @@ mv ~/.vim $backuppath/.vim.bak
 mv ~/.tmux $backuppath/.tmux
 mv ~/.tmux.conf $backuppath/.tmux.conf
 
+cp .bash_profile ~/ ;
 cp .bashrc ~/ ;
 cp .bashrc_custom ~/
 source ~/.bashrc ;
