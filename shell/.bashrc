@@ -305,8 +305,8 @@ fi
 
     # grep options
     # grep --color it implies grep --color=auto which detects whether the output is a terminal and if so enables colors. However, when it detects a pipe it disables coloring.
-    export GREP_OPTIONS='--color=always'     #'--color=auto'
-    export GREP_COLOR='1;31' # green for matches
+    #export GREP_OPTIONS='--color=always'     #'--color=auto' .  #  sbt won't recognize JDK if you are colorizing your grep in .bashrc   https://stackoverflow.com/a/47180447
+    #export GREP_COLOR='1;31' # green for matches
 
     # sort options
     # Ensures cross-platform sorting behavior of GNU sort.
