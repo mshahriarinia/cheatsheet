@@ -4,3 +4,8 @@ Stuff like vim, tmux, eclipse mastering configs, and etc that come in handy when
 
 Eclipse formatting: Eclipse>Window>Preferences>Java>Coed Style>Formatter
 
+
+
+================
+
+
