@@ -11,15 +11,15 @@ cd assignment1
 ./setup_googlecloud.sh  # You will be prompted to enter Y/N at various times during the download. Press enter for every prompt.
 
 If you had no errors, you can proceed to work with your virtualenv as normal. I.e. run
-source .env/bin/activate
+source env/bin/activate
 in your assignment directory to load the venv, and run
 deactivate
 to exit the venv.
 
 NOTE: The instructions above will run everything needed using Python 2.7. If you would like to use Python 3.5 instead, edit setup_googlecloud.sh to replce the line
-virtualenv .env 
+virtualenv env 
 with
-virtualenv -p python3 .env
+virtualenv -p python3 env
 
 
 before running
@@ -45,19 +45,19 @@ Configuring Jupyter Notebook
 
 The following instructions are excerpts from this page that has more detailed instructions.
 
-morteza@wikilinks:~$ virtualenv .env
-New python executable in /home/morteza/.env/bin/python
+morteza@wikilinks:~$ virtualenv env
+New python executable in /home/morteza/env/bin/python
 Installing setuptools, pip, wheel...done.
-morteza@wikilinks:~$ source ~/.env/bin/activate  # same dir as the virtual env above
-(.env) morteza@wikilinks:~$ ./setup_googlecloud.sh
-(.env) morteza@wikilinks:~$ pip install -r requirements.txt  # remove site=0.0.1   reddit link
+morteza@wikilinks:~$ source ~/env/bin/activate  # same dir as the virtual env above
+(env) morteza@wikilinks:~$ ./setup_googlecloud.sh
+(env) morteza@wikilinks:~$ pip install -r requirements.txt  # remove site=0.0.1   reddit link
 
 
 On your GCE instance check where the Jupyter configuration file is located (Mine was in /home/timnitgebru/.jupyter/jupyter_notebook_config.py):
 ls ~/.jupyter/jupyter_notebook_config.py
 
 If it doesn’t exist, create one:
-jupyter notebook --generate-config   # Remember to activate your virtualenv ('source .env/bin/activate') so you can actually run jupyter :)
+jupyter notebook --generate-config   # Remember to activate your virtualenv ('source env/bin/activate') so you can actually run jupyter :)
 
 
 Using your favorite editor (vim, emacs etc…) add the following lines to the config file, (e.g.: /home/timnitgebru/.jupyter/jupyter_notebook_config.py):
