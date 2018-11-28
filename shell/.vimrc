@@ -1,7 +1,7 @@
 " TODO: Ctrl-s for save
 "set background=dark     " Assume a dark background
 set t_Co=256
-colorscheme mustang
+" colorscheme mustang
 
 set number                      " always show line numbers, short hand is :set nu
  "    set relativenumber   " short hand is  set rnu     -- relative number instead of absolute number of lines, which is done by :set number
