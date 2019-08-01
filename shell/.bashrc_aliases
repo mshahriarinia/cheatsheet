@@ -1,0 +1,38 @@
+
+
+# Safety
+alias rm="rm -i"
+alias mv="mv -i"
+alias cp="cp -i"
+
+alias ..='cd ..'
+alias cd.='cd ..'
+alias cd..='cd ..'
+
+alias v='vim'
+alias vi='vim'
+alias vcat='~/cheatsheet/shell/bin/vcat'
+alias vimcat='~/cheatsheet/shell/bin/vcat'
+
+alias gt='git'
+alias gaa='git add -A :/' # Add everything, modified, deleted, added
+alias gau='git add -u' # ONLY stage the files that are already being tracked for modification and deletion
+alias ga='git add'
+alias gs='git status'
+alias gb='git branch'
+alias gd='git diff'
+alias gm='git merge'
+alias gc='git commit -m'
+alias gp='git push'
+alias gp='temp=$(git rev-parse --abbrev-ref HEAD); git push origin $temp'
+alias gco='git checkout'
+alias gr='temp=$(git rev-parse --abbrev-ref HEAD); git checkout master; git pull; git checkout $temp; git merge --no-ff master'
+alias gl='git log'
+alias gld='git log -- .'  # git log for this directory
+alias glb='git log --first-parent'  # git log for this branch
+alias get='sudo apt-get install'
+alias cl='clear'
+
+#   alias gr0='git push -f origin master '
+#   alias gr1='git fetch upstream; git checkout master; git rebase upstream/master'
+#   alias gr2='git rebase --continue; git rebase --skip; git mergetool'
