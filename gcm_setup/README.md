@@ -30,20 +30,24 @@ before running
 
 # Using Jupyter Notebook with Google Compute Engine
 
-Set a static IP for your machine: 
+## Set a static IP for your machine: 
+
 click on the 3 line icon next to the Google Cloud Platform button on the top left corner of your screen, go to Networking and External IP addresses. 
+
 To have a static IP address, change Type from Ephemeral to Static. Enter your preffered name for your static IP, mine is assignment-1 (see screenshot below). And click on Reserve. Remember to release the static IP address when you are done because according to this page Google charges a small fee for unused static IPs. Type should now be set to Static.
 
 Take note of your Static IP address (circled on the screenshot below).   35.196.247.146
 
-Adding a Firewall rule
+## Adding a Firewall rule
 One last thing you have to do is adding a new firewall rule allowing TCP acess to a particular <PORT-NUMBER>. I usually use 7000 or 8000 for <PORT-NUMBER>. Click on the 3 line icon at the top of the page next to Google Cloud Platform. On the menu that pops up on the left column, go to Networking and Firewall rules (see the screenshot below).
+  
 Click on the blue CREATE FIREWALL RULE button. Enter whatever name you want: I used assignment1-rules. Enter 0.0.0.0/0 for Source IP ranges and tcp:<PORT-NUMBER> for Allowed protocols and ports where <PORT-NUMBER> is the number you used above. Click on the blue Create button. See the screen shot below. 
 
 Create target tags: wikilinks, then edit the vm instance and add wikilinks to network tags
 
+```
 Configuring Jupyter Notebook
-
+```
 
 The following instructions are excerpts from this page that has more detailed instructions.
 ```
@@ -77,8 +81,10 @@ c.NotebookApp.port = <PORT-NUMBER>
 Where <PORT-NUMBER> is the same number you used in the prior section. Save your changes and close the file. e.g. 5624
 
 
-Launching and connecting to Jupyter Notebook
+## Launching and connecting to Jupyter Notebook
+
 The instructions below assume that you have SSH’d into your GCE instance using the prior instructions, have already downloaded and unzipped the current assignment folder into assignmentX (where X is the assignment number), and have successfully configured Jupyter Notebook.
+
 If you are not already in the assignment directory, cd into it by running the following command:
 cd assignment1 
 
@@ -86,13 +92,13 @@ cd assignment1
 If you haven’t already done so, activate your virtualenv by running:
 `source .env/bin/activate`
 
-
 Launch Jupyter notebook using:
 `jupyter-notebook --no-browser --port=<PORT-NUMBER>`
 
 
 Where <PORT-NUMBER> is what you wrote in the prior section.
-On your local browser, if you go to http://<YOUR-EXTERNAL-IP-ADDRESS>:<PORT-NUMBER>, you should see something like the screen below. My value for <YOUR-EXTERNAL-IP-ADDRESS> was 104.196.224.11 as mentioned above. You should now be able to start working on your assignments.
+  
+On your local browser, if you go to `http://<YOUR-EXTERNAL-IP-ADDRESS>:<PORT-NUMBER>`, you should see something like the screen below. My value for <YOUR-EXTERNAL-IP-ADDRESS> was 104.196.224.11 as mentioned above. You should now be able to start working on your assignments.
 
 
 http://35.196.247.146:7000/tree
