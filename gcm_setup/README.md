@@ -6,6 +6,7 @@ __Summary__
 
 ```
 sudo apt install python3-pip python3-dev
+echo "alias python='python3'" >> ~/.bashrc
 sudo -H pip3 install --upgrade pip
 sudo -H pip3 install virtualenv
 virtualenv env
