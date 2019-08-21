@@ -1,4 +1,27 @@
 
+__Summary__
+1. Create VM instance
+2. Add static IP to it
+3. Install on VM
+
+```
+sudo apt install python3-pip python3-dev
+sudo -H pip3 install --upgrade pip
+sudo -H pip3 install virtualenv
+virtualenv env
+source env/bin/activate
+pip install jupyter
+jupyter notebook --no-browser --port=8889
+```
+
+4. Create SSH tunnel to VM and port forward:
+```
+gcloud compute ssh --zone "us-central1-a" "mortezas-instance-1" -- -NL 8889:localhost:8889
+```
+
+http://localhost:8889
+
+
 # Launch a Virtual Instance
 
 To launch a virtual instance, go to the Compute Engine menu on the left column of your dashboard and click on VM instances. Then click on the blue CREATE button on the next page. This will take you to a page that looks like the screenshot below. (NOTE: Please carefully read the instructions in addition to looking at the screenshots. The instructions tell you exactly what values to fill in).
