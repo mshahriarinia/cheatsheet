@@ -11,6 +11,7 @@ sudo -H pip3 install virtualenv
 virtualenv env
 source env/bin/activate
 pip install jupyter
+pip install tensorflow==2.0.0-beta1
 jupyter notebook --no-browser --port=8889
 ```
 
