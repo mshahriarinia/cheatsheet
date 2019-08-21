@@ -1,5 +1,6 @@
 
-Launch a Virtual Instance
+# Launch a Virtual Instance
+
 To launch a virtual instance, go to the Compute Engine menu on the left column of your dashboard and click on VM instances. Then click on the blue CREATE button on the next page. This will take you to a page that looks like the screenshot below. (NOTE: Please carefully read the instructions in addition to looking at the screenshots. The instructions tell you exactly what values to fill in).
 
 Make sure that the Zone is set to be us-west1-b (east-1c for deepintent) (especially for assignments where you need to use GPU instances). Under Machine type pick the 8 vCPUs option. Click on the customize button under Machine type and make sure that the number of cores is set to 8 and the number of GPUs is set to None (we will not be using GPUs in assignment 1 and this tutorial will be updated with instructions for GPU usage). Click on the Change button under Boot disk, choose OS images, check Ubuntu 16.04 LTS and click on the blue select button. Check Allow HTTP traffic and Allow HTTPS traffic. Click on disk and then Disks and uncheck Delete boot disk when instance is deleted (Note that the “Disks” option may be hiding under an expandable URL at the bottom of that webform). Click on the blue Create button at the bottom of the page. You should have now successfully created a Google Compute Instance, it might take a few minutes to start running. Your screen should look something like the one below. When you want to stop running the instance, click on the blue stop button above.
