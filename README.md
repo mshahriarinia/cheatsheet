@@ -38,7 +38,10 @@ wget https://raw.githubusercontent.com/mshahriarinia/cheatsheet/master/shell/.vi
 wget https://raw.githubusercontent.com/mshahriarinia/cheatsheet/master/shell/.tmux.conf
 mkdir ~/.tmuxinator
 wget https://raw.githubusercontent.com/mshahriarinia/cheatsheet/master/shell/.tmuxinator/server-editor-tmux-session.yml > ~/.tmuxinator/server-editor-tmux-session.yml
-mux start ~/.tmuxinator/server-editor-tmux-session.yml
+mux start -p ~/.tmuxinator/server-editor-tmux-session.yml
+
+tmux attach -t pythone-cosystem
+
 ```
 
 ## bashrc
