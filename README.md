@@ -36,12 +36,13 @@ wget https://raw.githubusercontent.com/mshahriarinia/cheatsheet/master/shell/.vi
 ## tmux
 ```
 wget https://raw.githubusercontent.com/mshahriarinia/cheatsheet/master/shell/.tmux.conf
+
+sudo gem install tmuxinator
 mkdir ~/.tmuxinator
 wget https://raw.githubusercontent.com/mshahriarinia/cheatsheet/master/shell/.tmuxinator/server-editor-tmux-session.yml > ~/.tmuxinator/server-editor-tmux-session.yml
 mux start -p ~/.tmuxinator/server-editor-tmux-session.yml
 
-tmux attach -t pythone-cosystem
-
+tmux attach -t server-editor-tmux-session
 ```
 
 ## bashrc
