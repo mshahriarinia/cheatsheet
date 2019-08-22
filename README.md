@@ -37,7 +37,7 @@ wget https://raw.githubusercontent.com/mshahriarinia/cheatsheet/master/shell/.vi
 ```
 wget https://raw.githubusercontent.com/mshahriarinia/cheatsheet/master/shell/.tmux.conf
 mkdir ~/.tmuxinator
-
+wget https://raw.githubusercontent.com/mshahriarinia/cheatsheet/master/shell/.tmuxinator/server-editor-tmux-session.yml > ~/.tmuxinator/server-editor-tmux-session.yml
 ```
 
 ## bashrc
