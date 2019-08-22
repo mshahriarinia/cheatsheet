@@ -36,6 +36,8 @@ wget https://raw.githubusercontent.com/mshahriarinia/cheatsheet/master/shell/.vi
 ## tmux
 ```
 wget https://raw.githubusercontent.com/mshahriarinia/cheatsheet/master/shell/.tmux.conf
+mkdir ~/.tmuxinator
+
 ```
 
 ## bashrc
