@@ -36,3 +36,5 @@ alias cl='clear'
 #   alias gr0='git push -f origin master '
 #   alias gr1='git fetch upstream; git checkout master; git rebase upstream/master'
 #   alias gr2='git rebase --continue; git rebase --skip; git mergetool'
+
+alias mux=tmuxinator
