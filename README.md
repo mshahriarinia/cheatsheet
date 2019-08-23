@@ -44,6 +44,7 @@ source .bashrc
 ```
 
 ## Jupyter notebook
+Reserve static ip for machine (not ephemeral)
 ```
 sudo apt update
 sudo apt install python3-pip python3-dev
