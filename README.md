@@ -43,6 +43,33 @@ echo "source ~/.bashrc_aliases" >> ~/.bashrc
 source .bashrc
 ```
 
+## Jupyter notebook
+```
+sudo apt update
+sudo apt install python3-pip python3-dev
+echo "alias python=python3" >> ~/.bashrc_aliases
+source ~/.bashrc_aliases
+sudo -H pip3 install --upgrade pip
+sudo -H pip3 install virtualenv
+virtualenv env
+source env/bin/activate
+sudo pip install jupyter
+pip install tensorflow
+jupyter notebook --no-browser --port=8889
+
+```
+
+To ssh tunnel to it to be able to access ti localhost
+```
+gcloud compute ssh --zone "us-central1-a" "mortezas-instance-1" -- -NL 8889:localhost:8889
+```
+
+To be able to access the notebook from any ip:
+  - allow http https on GCP
+  - Allow all ports
+  - On jupyter allow any origin any ip and remote access
+
+
 setup gsutil https://cloud.google.com/storage/docs/gsutil_install#linux
 
 # IDE Formatting 
