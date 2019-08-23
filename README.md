@@ -35,6 +35,7 @@ mux start -p ~/.tmuxinator/server-editor-tmux-session.yml
 
 tmux attach -t server-editor-tmux-session
 ```
+`tmux kill-server`
 
 ## bashrc
 ```
