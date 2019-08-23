@@ -1,13 +1,4 @@
-This project is dedicated to daily tools that can make a difference in software engineer's life!
-
-Stuff like vim, tmux, eclipse mastering configs, and etc that come in handy when you are developing a top notch project but don't have much fancy tools at hand.
-
-Eclipse formatting: 
-```
-Eclipse>Window>Preferences>Java>Code Style>Formatter
-```
-
-================
+This project is dedicated to daily tools that can make a difference in software engineer's life! Stuff like vim, tmux, eclipse mastering configs, and etc that come in handy when you are developing a top notch project but don't have much fancy tools at hand.
 
 # Machine Setup
 ## SSH
@@ -54,5 +45,11 @@ source .bashrc
 
 setup gsutil https://cloud.google.com/storage/docs/gsutil_install#linux
 
+# IDE Formatting 
+## Eclipse formatting
+```
+Eclipse>Window>Preferences>Java>Code Style>Formatter
+```
+## IntelliJ Java/Scala formatting
 
 
