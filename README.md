@@ -52,23 +52,6 @@ echo "source ~/.bashrc_aliases" >> ~/.bashrc
 source .bashrc
 ```
 
-
-```
-   55  pip install tensorflow-gpu
-   56  nvidia-smi
-   57  tmux
-   58  history
-   $ python
-   from tensorflow.python.client import device_lib
-   print(device_lib.list_local_devices())  # shows gpu devices
-```   
-
-setup git params and id_rsa on machine
-
-git clone cheetsheet 
-
-copy .tmux.conf and .vimrc to ~/
-
 setup gsutil https://cloud.google.com/storage/docs/gsutil_install#linux
 
 
