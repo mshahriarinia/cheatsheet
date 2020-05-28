@@ -72,6 +72,16 @@ To ssh tunnel to it to be able to access ti localhost
 gcloud compute ssh --zone "us-central1-a" "mortezas-instance-1" -- -NL 8889:localhost:8889
 ```
 
+scp from google
+
+```
+gcloud beta compute ssh "mortypltx@instance-1" --zone "us-east1-c"
+
+gcloud compute scp "mortypltx@instance-1:/home/mortypltx/pltx-brands-mongodb-dump-08-18-2019.gz" .
+mux start -p  zProject/pltx.sandbox/mshahriarinia/.tmuxinator/pltx-tmuxinator-servers.yml
+```
+
+
 To be able to access the notebook from any ip:
   - allow http https on GCP
   - Allow all ports
